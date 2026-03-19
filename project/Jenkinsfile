@@ -26,7 +26,7 @@ stage('BuildImage'){
 
 stage('DeployWithAnsible'){
     steps{
-        bat 'wsl ansible-playbook -i ansible/inventory ansible/deploy.yml'
+        bat 'docker run --rm -v %cd%:/app -w /app williamyeh/ansible ansible-playbook -i ansible/inventory ansible/deploy.yml'
     }
 }
 
