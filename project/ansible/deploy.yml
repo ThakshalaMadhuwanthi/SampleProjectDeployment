@@ -4,7 +4,9 @@ hosts: work_group
 become: yes
 tasks:
   - name: deploy the app
-    image: myapp:latest
-    state: started
-    ports:
-      - "8083:80"
+    docker_container:
+      name: myapp-container
+      image: myapp:latest
+      state: started
+      ports:
+        - "8083:80"
