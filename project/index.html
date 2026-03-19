@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevOps Deploy Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .status {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .success {
+      color: #22c55e;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #3b82f6;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #2563eb;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🚀 DevOps Deployment Dashboard
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Application Status</h2>
+    <p class="status success">Running ✅</p>
+    <button onclick="refreshStatus()">Refresh</button>
+  </div>
+
+  <div class="card">
+    <h2>Build Info</h2>
+    <p>Version: v1.0</p>
+    <p>Last Deploy: <span id="time"></span></p>
+  </div>
+</div>
+
+<script>
+  function refreshStatus() {
+    alert("Status checked! App is running.");
+  }
+
+  document.getElementById("time").innerText = new Date().toLocaleString();
+</script>
+
+</body>
+</html>
