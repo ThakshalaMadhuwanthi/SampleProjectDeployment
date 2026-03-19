@@ -1,0 +1,10 @@
+---
+name: Deploy app
+hosts: work_group
+become: yes
+tasks:
+  - name: deploy the app
+    image: myapp:latest
+    state: started
+    ports:
+      - "8083:80"

@@ -1,0 +1,52 @@
+pipeline{
+
+agent  any
+
+triggers {
+    githubPush()
+}
+
+environment{
+    Docker_Image = "myapp:latest"
+}
+
+stages{
+
+stage('ClonetheRepo'){
+    steps{
+     git 'https://github.com/ThakshalaMadhuwanthi/SampleProjectDeployment.git'
+    }
+
+
+
+}
+stage('BuildImage'){
+
+    steps{
+     sh 'docker build -t $Docker_Image .'
+    }
+   
+}
+
+stage('DeployWithAnsible'){
+    steps{
+        sh 'ansible-playbook -i ansible/inventory deploy.yml'
+    }
+}
+
+
+
+}
+
+post{
+    success{
+        echo 'Successfully Deployed!'
+    }
+    failure{
+        echo 'Deplyment failed!'
+    }
+}
+
+
+
+}
