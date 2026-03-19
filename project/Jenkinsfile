@@ -19,7 +19,7 @@ stages{
 stage('BuildImage'){
 
     steps{
-     bat 'docker build -t %Docker_Image%  .'
+     bat 'docker build -t %Docker_Image%  project/'
     }
    
 }
