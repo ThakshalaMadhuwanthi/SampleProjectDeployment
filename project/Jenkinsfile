@@ -12,10 +12,6 @@ environment{
 
 stages{
 
-stage('ClonetheRepo'){
-    steps{
-     git 'https://github.com/ThakshalaMadhuwanthi/SampleProjectDeployment.git'
-    }
 
 
 
