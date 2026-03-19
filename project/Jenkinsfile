@@ -23,14 +23,14 @@ stage('ClonetheRepo'){
 stage('BuildImage'){
 
     steps{
-     sh 'docker build -t $Docker_Image .'
+     bat 'docker build -t $Docker_Image .'
     }
    
 }
 
 stage('DeployWithAnsible'){
     steps{
-        sh 'ansible-playbook -i ansible/inventory deploy.yml'
+        bat 'ansible-playbook -i ansible/inventory deploy.yml'
     }
 }
 
